@@ -1,0 +1,44 @@
+name: orm_risk_assessment
+description: ORM Risk Assessment application - Military-style risk management tool
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  shared_preferences: ^2.2.2
+  path_provider: ^2.1.1
+  intl: ^0.19.0
+  excel: ^4.0.2
+  csv: ^6.0.0
+  pdf: ^3.11.3
+  printing: ^5.12.2
+  permission_handler: ^11.3.0
+  file_picker: ^8.3.0
+  flutter_slidable: ^3.0.0
+  flutter_svg: ^2.0.7
+  get: ^4.6.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/left.png
+    - assets/images/right.png
+
+flutter_launcher_icons:
+  android: true
+  windows:
+    generate: true
+    icon_size: 256
+  image_path: assets/images/left.png
