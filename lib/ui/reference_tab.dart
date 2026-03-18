@@ -108,16 +108,16 @@ class _ReferenceTabState extends State<ReferenceTab> {
     }
 
     const catOrder = [
-      'PLANNING',
-      'INTERFACE (HUMAN-MACHINE)',
-      'LEADERSHIP & SUPERVISION',
       'HUMAN FACTORS',
+      'ENVIRONMENT',
+      'LEADERSHIP & SUPERVISION',
+      'INTERFACE (HUMAN-MACHINE)',
       'COMMUNICATIONS',
       'OPERATIONS / MISSION',
+      'PLANNING',
       'TASK PROFICIENCY AND CURRENCY',
       'EQUIPMENT',
       'REGULATIONS / RISK DECISIONS',
-      'ENVIRONMENT',
     ];
 
     return Stack(
