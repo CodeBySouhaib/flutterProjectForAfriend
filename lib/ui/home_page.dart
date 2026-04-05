@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:orm_risk_assessment/ui/assessment_tab.dart';
 import 'package:orm_risk_assessment/ui/history_tab.dart';
+import 'package:orm_risk_assessment/ui/landing_page.dart';
 import 'package:orm_risk_assessment/ui/reference_tab.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,28 +20,41 @@ class _HomePageState extends State<HomePage> {
     ReferenceTab(),
   ];
 
+  void _goToLanding() {
+    Navigator.of(context).pushReplacement(
+      PageRouteBuilder(
+        pageBuilder: (_, __, ___) => const LandingPage(),
+        transitionsBuilder: (_, anim, __, child) =>
+            FadeTransition(opacity: anim, child: child),
+        transitionDuration: const Duration(milliseconds: 450),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 150,
-        leadingWidth: 150,
-        title: const Text('ORM SHEET'),
-        backgroundColor: const Color(0xFF4A6741),
+        leadingWidth: 120,
+        title: const Text(
+          'ORM SHEET',
+          overflow: TextOverflow.visible,
+          softWrap: false,
+        ),
+        backgroundColor: const Color(0xFF191970),
         centerTitle: true,
         elevation: 0,
-        // LEFT image
         leading: Padding(
-          padding: const EdgeInsets.all(8.0), // optional padding
+          padding: const EdgeInsets.all(4.0),
           child: Image.asset(
             'assets/images/left.png',
             fit: BoxFit.contain,
           ),
         ),
-        // RIGHT image
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0), // optional padding
+            padding: const EdgeInsets.all(4.0),
             child: Image.asset(
               'assets/images/right.png',
               fit: BoxFit.contain,
@@ -52,23 +66,31 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           border: Border(
-            top: BorderSide(color: Color(0xFF4A6741), width: 2),
+            top: BorderSide(color: Color(0xFF191970), width: 2),
           ),
         ),
         child: BottomNavigationBar(
-          currentIndex: _currentIndex,
+          currentIndex: _currentIndex + 1,
           onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
+            if (index == 0) {
+              _goToLanding();
+            } else if (index > 0 && index < 4) {
+              setState(() {
+                _currentIndex = index - 1;
+              });
+            }
           },
-          backgroundColor: const Color(0xFF1A1A1A),
-          selectedItemColor: const Color(0xFFB8D4A8),
+          backgroundColor: const Color(0xFF080838),
+          selectedItemColor: const Color(0xFF4169E1),
           unselectedItemColor: const Color(0xFF888888),
           selectedFontSize: 12,
           unselectedFontSize: 12,
           type: BottomNavigationBarType.fixed,
           items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
             BottomNavigationBarItem(
               icon: Icon(Icons.security),
               label: 'Risk Assessment',

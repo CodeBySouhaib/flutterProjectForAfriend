@@ -13,7 +13,7 @@ class HistoryDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Assessment Details'),
-        backgroundColor: const Color(0xFF4A6741),
+        backgroundColor: const Color(0xFF191970),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -102,7 +102,7 @@ class HistoryDetailPage extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xFF4A6741)),
+        border: Border.all(color: const Color(0xFF191970)),
         color: const Color(0xFF0F2419),
       ),
       child: Column(

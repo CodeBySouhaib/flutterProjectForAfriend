@@ -102,7 +102,7 @@ class _HistoryTile extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
-          border: Border.all(color: const Color(0xFF4A6741)),
+          border: Border.all(color: const Color(0xFF191970)),
           color: const Color(0xFF0F2419),
         ),
         child: Column(

@@ -9,7 +9,7 @@ Color _matrixBg(int score) {
   if (score >= 15) return const Color(0xFFF44336); // very high – red
   if (score >= 10) return const Color(0xFFFF9800); // high     – orange
   if (score >= 5) return const Color(0xFFFFC107); // moderate – yellow
-  return const Color(0xFF4CAF50); // low      – green
+  return const Color(0xFF4169E1); // low      – blue
 }
 
 Color _matrixTxt(int score) {
@@ -223,8 +223,8 @@ class _ReferenceTabState extends State<ReferenceTab> {
         columnSpacing: 12,
         headingRowHeight: 40,
         dataRowMinHeight: 48,
-        border: TableBorder.all(color: const Color(0xFF4A6741)),
-        headingRowColor: WidgetStateProperty.all(const Color(0xFF4A6741)),
+        border: TableBorder.all(color: const Color(0xFF191970)),
+        headingRowColor: WidgetStateProperty.all(const Color(0xFF191970)),
         columns: [
           DataColumn(label: _headerText('Value')),
           DataColumn(label: _headerText('Category')),
@@ -232,7 +232,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
         ],
         rows: rows
             .map((r) => DataRow(
-                  color: WidgetStateProperty.all(const Color(0xFF0F2419)),
+                  color: WidgetStateProperty.all(const Color(0xFF111154)),
                   cells: [
                     DataCell(_boldCell(r[0].toString())),
                     DataCell(_boldCell(r[1].toString())),
@@ -258,7 +258,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
             const Text(
               'Formula: Risk Value = Likelihood × Severity − Deduction',
               style: TextStyle(
-                  color: Color(0xFFD4E8C8),
+                  color: Color(0xFF4169E1),
                   fontWeight: FontWeight.bold,
                   fontSize: 14),
             ),
@@ -273,7 +273,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
             const Text(
               'Risk Matrix (Likelihood × Severity)',
               style: TextStyle(
-                  color: Color(0xFFD4E8C8),
+                  color: Color(0xFF4169E1),
                   fontWeight: FontWeight.bold,
                   fontSize: 15),
             ),
@@ -285,7 +285,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
             const Text(
               'Risk Categories by Score',
               style: TextStyle(
-                  color: Color(0xFFD4E8C8),
+                  color: Color(0xFF4169E1),
                   fontWeight: FontWeight.bold,
                   fontSize: 15),
             ),
@@ -355,13 +355,13 @@ class _ReferenceTabState extends State<ReferenceTab> {
         width: _mLabelW,
         height: _mCellH,
         decoration: BoxDecoration(
-          color: const Color(0xFF4A6741),
-          border: Border.all(color: const Color(0xFF2A4A3A)),
+          color: const Color(0xFF191970),
+          border: Border.all(color: const Color(0xFF111154)),
         ),
         child: const Center(
           child: Text('Likelihood',
               style: TextStyle(
-                  color: Color(0xFFD4E8C8),
+                  color: Color(0xFF4169E1),
                   fontWeight: FontWeight.bold,
                   fontSize: 13)),
         ),
@@ -371,13 +371,13 @@ class _ReferenceTabState extends State<ReferenceTab> {
         width: _mCellW,
         height: _mCellH,
         decoration: BoxDecoration(
-          color: const Color(0xFF4A6741),
-          border: Border.all(color: const Color(0xFF2A4A3A)),
+          color: const Color(0xFF191970),
+          border: Border.all(color: const Color(0xFF111154)),
         ),
         child: Center(
           child: Text(label,
               style: const TextStyle(
-                  color: Color(0xFFD4E8C8),
+                  color: Color(0xFF4169E1),
                   fontWeight: FontWeight.bold,
                   fontSize: 11),
               textAlign: TextAlign.center),
@@ -388,13 +388,13 @@ class _ReferenceTabState extends State<ReferenceTab> {
         width: _mLabelW,
         height: _mCellH,
         decoration: BoxDecoration(
-          color: const Color(0xFF4A6741),
-          border: Border.all(color: const Color(0xFF2A4A3A)),
+          color: const Color(0xFF191970),
+          border: Border.all(color: const Color(0xFF111154)),
         ),
         child: Center(
           child: Text(label,
               style: const TextStyle(
-                  color: Color(0xFFD4E8C8),
+                  color: Color(0xFF4169E1),
                   fontWeight: FontWeight.bold,
                   fontSize: 12)),
         ),
@@ -405,7 +405,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
         height: _mCellH,
         decoration: BoxDecoration(
           color: _matrixBg(score),
-          border: Border.all(color: const Color(0xFF2A4A3A)),
+          border: Border.all(color: const Color(0xFF111154)),
         ),
         child: Center(
           child: Text(score.toString(),
@@ -426,14 +426,14 @@ class _ReferenceTabState extends State<ReferenceTab> {
       ['21-25', 'Extreme Risk', 'Mission abort/postpone, redesign required'],
     ];
     final badgeBg = {
-      'Low Risk': const Color(0xFF2D5016),
+      'Low Risk': const Color(0xFF191970),
       'Moderate Risk': const Color(0xFF8B5A00),
       'High Risk': const Color(0xFF8B4500),
       'Very High Risk': const Color(0xFF8B1010),
       'Extreme Risk': const Color(0xFF000000),
     };
     final badgeTxt = {
-      'Low Risk': const Color(0xFFD4E8C8),
+      'Low Risk': const Color(0xFF4169E1),
       'Moderate Risk': const Color(0xFFFFE8C8),
       'High Risk': const Color(0xFFFFE8C8),
       'Very High Risk': const Color(0xFFFFCCCC),
@@ -444,8 +444,8 @@ class _ReferenceTabState extends State<ReferenceTab> {
       scrollDirection: Axis.horizontal,
       child: DataTable(
         columnSpacing: 12,
-        border: TableBorder.all(color: const Color(0xFF4A6741)),
-        headingRowColor: WidgetStateProperty.all(const Color(0xFF4A6741)),
+        border: TableBorder.all(color: const Color(0xFF191970)),
+        headingRowColor: WidgetStateProperty.all(const Color(0xFF191970)),
         columns: [
           DataColumn(label: _headerText('Score Range')),
           DataColumn(label: _headerText('Risk Category')),
@@ -453,7 +453,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
         ],
         rows: rows
             .map((r) => DataRow(
-                  color: WidgetStateProperty.all(const Color(0xFF0F2419)),
+                  color: WidgetStateProperty.all(const Color(0xFF111154)),
                   cells: [
                     DataCell(_boldCell(r[0])),
                     DataCell(
@@ -462,7 +462,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
                             horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
                           color: badgeBg[r[1]],
-                          border: Border.all(color: const Color(0xFF4A6741)),
+                          border: Border.all(color: const Color(0xFF191970)),
                         ),
                         child: Text(r[1],
                             style: TextStyle(
@@ -498,8 +498,8 @@ class _ReferenceTabState extends State<ReferenceTab> {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: const Color(0xFF0F2419),
-        border: Border.all(color: const Color(0xFF2A4A3A)),
+        color: const Color(0xFF111154),
+        border: Border.all(color: const Color(0xFF111154)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -513,7 +513,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
               children: [
                 Text(cat,
                     style: const TextStyle(
-                        color: Color(0xFFD4E8C8),
+                        color: Color(0xFF4169E1),
                         fontWeight: FontWeight.bold,
                         fontSize: 13)),
                 const SizedBox(height: 8),
@@ -689,7 +689,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
             Container(
               decoration: BoxDecoration(
                 color: const Color(0xFF162A1F),
-                border: Border.all(color: const Color(0xFF4A6741)),
+                border: Border.all(color: const Color(0xFF191970)),
               ),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<int>(
@@ -751,7 +751,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
         children: [
           const Text('Choices',
               style: TextStyle(
-                  color: Color(0xFFD4E8C8),
+                  color: Color(0xFF4169E1),
                   fontWeight: FontWeight.bold,
                   fontSize: 14)),
           const SizedBox(height: 6),
@@ -826,11 +826,11 @@ class _ReferenceTabState extends State<ReferenceTab> {
       Container(
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [Color(0xFF1C3D2C), Color(0xFF0F2419)],
+            colors: [Color(0xFF0D1B2A), Color(0xFF111154)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-          border: Border.all(color: const Color(0xFF4A6741)),
+          border: Border.all(color: const Color(0xFF191970)),
         ),
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -853,7 +853,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
   /// Bold green cell text
   static Widget _boldCell(String t) => Text(t,
       style: const TextStyle(
-          color: Color(0xFFD4E8C8), fontWeight: FontWeight.bold, fontSize: 13));
+          color: Color(0xFF4169E1), fontWeight: FontWeight.bold, fontSize: 13));
 
   /// Small coloured button used in the examples rows and inside modals
   static Widget _smallBtn(String label, Color bg, VoidCallback onPressed) =>
@@ -892,7 +892,7 @@ class _ReferenceTabState extends State<ReferenceTab> {
                   decoration: BoxDecoration(
                     color: const Color(0xFF1A1A1A),
                     border:
-                        Border.all(color: const Color(0xFF4A6741), width: 3),
+                        Border.all(color: const Color(0xFF191970), width: 3),
                     boxShadow: [
                       const BoxShadow(
                           color: Color(0xCC000000),
@@ -979,6 +979,6 @@ class _HeaderText extends StatelessWidget {
   Widget build(BuildContext context) => Text(
         text,
         style: const TextStyle(
-            color: Color(0xFFD4E8C8), fontWeight: FontWeight.bold),
+            color: Color(0xFF4169E1), fontWeight: FontWeight.bold),
       );
 }

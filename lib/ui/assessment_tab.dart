@@ -53,7 +53,7 @@ String riskCategoryFrom(double score) {
 Color colorFromCategory(String category) {
   switch (category) {
     case 'Low risk':
-      return const Color(0xFF4CAF50); // green
+      return const Color(0xFF4169E1); // low - blue
     case 'Moderate risk':
       return const Color(0xFFFFC107); // yellow
     case 'High risk':
@@ -478,11 +478,11 @@ class _AssessmentTabState extends State<AssessmentTab> {
     return Container(
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF1C3D2C), Color(0xFF0F2419)],
+          colors: [Color(0xFF0D1B2A), Color(0xFF111154)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        border: Border.all(color: const Color(0xFF4A6741)),
+        border: Border.all(color: const Color(0xFF191970)),
       ),
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -662,12 +662,12 @@ class _AssessmentTabState extends State<AssessmentTab> {
             hintText: placeholder,
             hintStyle: const TextStyle(color: Color(0xFF777777)),
             filled: true,
-            fillColor: const Color(0xFF162A1F),
+            fillColor: const Color(0xFF080838),
             border: OutlineInputBorder(
               borderSide: BorderSide(
                 color: isMissing
                     ? const Color(0xFF8B1010)
-                    : const Color(0xFF4A6741),
+                    : const Color(0xFF191970),
               ),
               borderRadius: BorderRadius.zero,
             ),
@@ -675,12 +675,12 @@ class _AssessmentTabState extends State<AssessmentTab> {
               borderSide: BorderSide(
                 color: isMissing
                     ? const Color(0xFF8B1010)
-                    : const Color(0xFF4A6741),
+                    : const Color(0xFF191970),
               ),
               borderRadius: BorderRadius.zero,
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: const Color(0xFFB8D4A8), width: 2),
+              borderSide: BorderSide(color: const Color(0xFF4169E1), width: 2),
               borderRadius: BorderRadius.zero,
             ),
             isDense: true,
@@ -705,7 +705,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
               style: TextStyle(
                 color: isMissing
                     ? const Color(0xFFFFCDD2)
-                    : const Color(0xFF8A9A8A),
+                    : const Color(0xFF4169E1),
                 fontSize: 11,
               ),
             ),
@@ -729,12 +729,12 @@ class _AssessmentTabState extends State<AssessmentTab> {
             hintText: 'YYYY-MM-DD',
             hintStyle: const TextStyle(color: Color(0xFF777777)),
             filled: true,
-            fillColor: const Color(0xFF162A1F),
+            fillColor: const Color(0xFF080838),
             border: OutlineInputBorder(
               borderSide: BorderSide(
                 color: isMissing
                     ? const Color(0xFF8B1010)
-                    : const Color(0xFF4A6741),
+                    : const Color(0xFF191970),
               ),
               borderRadius: BorderRadius.zero,
             ),
@@ -742,19 +742,19 @@ class _AssessmentTabState extends State<AssessmentTab> {
               borderSide: BorderSide(
                 color: isMissing
                     ? const Color(0xFF8B1010)
-                    : const Color(0xFF4A6741),
+                    : const Color(0xFF191970),
               ),
               borderRadius: BorderRadius.zero,
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: const Color(0xFFB8D4A8), width: 2),
+              borderSide: BorderSide(color: const Color(0xFF4169E1), width: 2),
               borderRadius: BorderRadius.zero,
             ),
             isDense: true,
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             prefixIcon: const Icon(Icons.calendar_today,
-                color: Color(0xFF8A9A8A), size: 18),
+                color: Color(0xFF4169E1), size: 18),
           ),
           keyboardType: const TextInputType.numberWithOptions(),
           inputFormatters: [
@@ -772,7 +772,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
             '📅 *Required field',
             style: TextStyle(
               color:
-                  isMissing ? const Color(0xFFFFCDD2) : const Color(0xFF8A9A8A),
+                  isMissing ? const Color(0xFFFFCDD2) : const Color(0xFF4169E1),
               fontSize: 11,
             ),
           ),
@@ -791,11 +791,11 @@ class _AssessmentTabState extends State<AssessmentTab> {
     return Container(
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF1C3D2C), Color(0xFF0F2419)],
+          colors: [Color(0xFF0D1B2A), Color(0xFF111154)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        border: Border.all(color: const Color(0xFF4A6741)),
+        border: Border.all(color: const Color(0xFF191970)),
       ),
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -816,7 +816,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
             children: [
               _actionButton(
                 label: '+ Add Risk',
-                color: const Color(0xFF4A6741),
+                color: const Color(0xFF191970),
                 textColor: const Color(0xFFD4E8C8),
                 onPressed: () => _addRisk(cat),
               ),
@@ -824,7 +824,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
               if (examples.isNotEmpty)
                 _actionButton(
                   label: 'Use Example',
-                  color: const Color(0xFF2D5016),
+                  color: const Color(0xFF191970),
                   textColor: const Color(0xFFD4E8C8),
                   onPressed: () =>
                       setState(() => _showExampleDropdown[cat] = !showDropdown),
@@ -847,8 +847,8 @@ class _AssessmentTabState extends State<AssessmentTab> {
       String cat, List<Map<String, dynamic>> examples) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF162A1F),
-        border: Border.all(color: const Color(0xFF4A6741)),
+        color: const Color(0xFF080838),
+        border: Border.all(color: const Color(0xFF191970)),
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
@@ -856,7 +856,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
           value: null, // always null – selecting fires onChanged then resets
           hint: const Text('Select an example…',
               style: TextStyle(color: Color(0xFF777777))),
-          icon: const Icon(Icons.arrow_drop_down, color: Color(0xFFB8D4A8)),
+          icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF4169E1)),
           style: const TextStyle(color: Color(0xFFE0E0E0), fontSize: 14),
           items: examples.map((ex) {
             final name = ex['name'] as String;
@@ -887,7 +887,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
 
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF0F2419),
+        color: const Color(0xFF111154),
         border: Border.all(color: const Color(0xFF2A4A3A)),
       ),
       padding: const EdgeInsets.all(12),
@@ -1007,14 +1007,14 @@ class _AssessmentTabState extends State<AssessmentTab> {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF162A1F),
-        border: Border.all(color: const Color(0xFF4A6741)),
+        color: const Color(0xFF080838),
+        border: Border.all(color: const Color(0xFF191970)),
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<int>(
           isExpanded: true,
           value: value,
-          icon: const Icon(Icons.arrow_drop_down, color: Color(0xFFB8D4A8)),
+          icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF4169E1)),
           style: const TextStyle(color: Color(0xFFE0E0E0), fontSize: 13),
           items: options.map((o) {
             final v = o['v'] as int;
@@ -1044,8 +1044,8 @@ class _AssessmentTabState extends State<AssessmentTab> {
 
   Widget _descriptionDropdown(_RiskRow row) => Container(
         decoration: BoxDecoration(
-          color: const Color(0xFF162A1F),
-          border: Border.all(color: const Color(0xFF4A6741)),
+          color: const Color(0xFF080838),
+          border: Border.all(color: const Color(0xFF191970)),
         ),
         child: DropdownButtonHideUnderline(
           child: DropdownButton<String>(
@@ -1053,7 +1053,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
             value: row.description.isEmpty ? null : row.description,
             hint: const Text('Select a choice…',
                 style: TextStyle(color: Color(0xFF777777))),
-            icon: const Icon(Icons.arrow_drop_down, color: Color(0xFFB8D4A8)),
+            icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF4169E1)),
             style: const TextStyle(color: Color(0xFFE0E0E0), fontSize: 13),
             items: row.choices
                 .map((c) => DropdownMenuItem<String>(value: c, child: Text(c)))
@@ -1081,11 +1081,11 @@ class _AssessmentTabState extends State<AssessmentTab> {
     return Container(
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF1C3D2C), Color(0xFF0F2419)],
+          colors: [Color(0xFF0D1B2A), Color(0xFF111154)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        border: Border.all(color: const Color(0xFF4A6741)),
+        border: Border.all(color: const Color(0xFF191970)),
       ),
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -1113,7 +1113,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
               Expanded(
                 child: _exportButton(
                   label: '💾 Save to Excel',
-                  bg: const Color(0xFF2D5016),
+                  bg: const Color(0xFF191970),
                   txtColor: const Color(0xFFD4E8C8),
                   onPressed: _exportToExcel,
                 ),
@@ -1122,7 +1122,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
               Expanded(
                 child: _exportButton(
                   label: '📝 Save as CSV',
-                  bg: const Color(0xFF4A6741),
+                  bg: const Color(0xFF191970),
                   txtColor: const Color(0xFFD4E8C8),
                   onPressed: _exportToCSV,
                 ),
@@ -1144,7 +1144,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
               Expanded(
                 child: _exportButton(
                   label: '📌 Save to History',
-                  bg: const Color(0xFF4A6741),
+                  bg: const Color(0xFF191970),
                   txtColor: const Color(0xFFD4E8C8),
                   onPressed: _saveToHistory,
                 ),
@@ -1165,7 +1165,7 @@ class _AssessmentTabState extends State<AssessmentTab> {
   }
 
   TextStyle _sectionHeadingStyle() => const TextStyle(
-        color: Color(0xFFB8D4A8),
+        color: Color(0xFF4169E1),
         fontSize: 18,
         fontWeight: FontWeight.bold,
       );
@@ -1174,17 +1174,17 @@ class _AssessmentTabState extends State<AssessmentTab> {
         hintText: hint,
         hintStyle: const TextStyle(color: Color(0xFF777777)),
         filled: true,
-        fillColor: const Color(0xFF162A1F),
+        fillColor: const Color(0xFF080838),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: const Color(0xFF4A6741)),
+          borderSide: BorderSide(color: const Color(0xFF191970)),
           borderRadius: BorderRadius.zero,
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: const Color(0xFF4A6741)),
+          borderSide: BorderSide(color: const Color(0xFF191970)),
           borderRadius: BorderRadius.zero,
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: const Color(0xFFB8D4A8), width: 2),
+          borderSide: BorderSide(color: const Color(0xFF4169E1), width: 2),
           borderRadius: BorderRadius.zero,
         ),
         isDense: true,
